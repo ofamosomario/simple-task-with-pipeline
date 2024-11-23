@@ -1,0 +1,24 @@
+default: &default
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: mario
+  password: 123mudar
+  port: <%= ENV.fetch('POSTGRES_PORT') {'5432'} %>
+
+development:
+  <<: *default
+  database: simple_crud_with_pipelinedevelopment
+
+test:
+  <<: *default
+  database: simple_crud_with_pipelinetest
+
+production:
+  <<: *default
+  database: simple_crud_with_pipelineproduction
+
+homolog:
+  <<: *default
+  database: simple_crud_with_pipelinehomolog
